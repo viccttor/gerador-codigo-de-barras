@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Código de Barras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Código de Barras</h1>
+        <input type="text" id="barcodeInput" placeholder="Digite o texto">
+
+        <label for="barcodeType">Tipo:</label>
+        <select id="barcodeType">
+            <option value="">Selecione um tipo</option>
+            <option value="CODE128">CODE128</option>
+            <option value="EAN13">EAN-13</option>
+            <!--<option value="UPC">UPC</option>-->
+            <option value="CODE39">CODE39</option>
+           <!-- <option value="ITF14">ITF-14</option>-->
+        </select>
+
+        <button onclick="generateBarcode()">Gerar Código de Barras</button>
+        <button onclick="downloadBarcode()">Baixar Código de Barras</button>
+        
+        <p id="errorMessage" class="error-message"></p>
+        
+        <canvas id="barcodeCanvas"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
